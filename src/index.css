@@ -16,15 +16,20 @@
 
 body {
   background-color: var(--primary);
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
 }
 
-.App {
+/* .App {
   display: flex;
   min-height: 100vh;
   align-items: center;
   justify-content: center;
   /* text-align: center; */
-}
+/* } */ 
 
 .calculator {
   width: 100px;
@@ -46,14 +51,15 @@ body {
 
 button {
   border: none;
+  /* border-radius: 0.5rem; */
   appearance: none;
-  width: 4em;
+  /* width: 4em; */
   height: 3.5em;
   background-color: var(--secondary);
   color: var(--dark-font);
   font-size: 18px;
   font-weight: 700;
-  margin: 1px 0px 0px 1px;
+  /* margin: 1px 0px 0px 1px; */
   padding: 16px;
   cursor: pointer;
   transition: 0.4s;
@@ -69,5 +75,18 @@ button:hover {
 
 .operators button {
     flex: 1 1 0% ;
-    background-color: var(--font-colour);
+    background-color: var(--primary);
+    color: var(--font-colour);
+    
+}
+
+.digits {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.digits button {
+  flex: 1 1 33.333%;
+  max-width: 33.333%;
+  background-color: var(--secondary);
 }
