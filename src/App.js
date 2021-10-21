@@ -8,7 +8,19 @@ function App() {
   const ops = ['/', '*', '+', '-', '.'];
 
   const updateCalc = value => {
-    setCalc(calc + value)
+    //limits ability to reuse operators one after the other
+    if (
+      ops.includes(value) && calc === '' || ops.includes(value) && ops.includes(calc.slice(-1))
+    ) {
+      return;
+      }
+    
+
+    setCalc(calc + value);
+
+    if (!ops.includes(value)) {
+      setResult(eval(calc + value).toString());
+    }
   }
 
   const createDigits = () => {
@@ -27,10 +39,14 @@ function App() {
 
   }
 
+  const calculate = () => {
+    setCalc(eval(calc).toString());
+  }
+
   return (
     <div className="calculator">
       <div className="display">
-        {result ? <span> ‎0</span> : ' '}{ calc || "0" }
+        {result ? <span></span> : ' '}{ calc || "0" }
       </div>
 
       <div className="operators">
@@ -46,7 +62,7 @@ function App() {
         <button  onClick={() => updateCalc('0')}>‎0</button>
         <button onClick={() => updateCalc('.')}>.</button>
         
-        <button>=</button>
+        <button onClick={calculate}>=</button>
       </div>
 
     </div>
