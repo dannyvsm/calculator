@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap');
+
 :root {
   --primary: #f7f0f0;
   --secondary: #18a999;
@@ -5,13 +7,14 @@
   --font-colour: #484349;
   --dark: #484349;
   --dark-font: #eee;
+
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Nunito", sans-serif;
 }
 
 body {
